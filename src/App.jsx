@@ -64,8 +64,11 @@ const App = () => {
         <button onClick={handleNowPlaying}>Now Playing</button>
       
       </header>
-      <MovieList data = {currMovie}/>
-      <button onClick={loadClicked}>Load More</button>
+      <main>
+        <MovieList data = {currMovie}/>
+        <button onClick={loadClicked}>Load More</button>
+      </main>
+   
     </div>
   )
 
