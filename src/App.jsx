@@ -13,6 +13,7 @@ const App = () => {
   const [searchQuery,setSearchQuery] = useState("")
 
 
+
   const fetchData = async () => {
     const apiKey = import.meta.env.VITE_API_KEY   
     let tempUrl =  `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}`
@@ -45,7 +46,8 @@ const App = () => {
     setPage(nextPage)
   }
 
-  function handleNowPlaying() {
+  const handleNowPlaying = (e) => {
+    e.stopPropagation()
     setSearchQuery("");
   }
 

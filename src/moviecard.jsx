@@ -1,9 +1,9 @@
 import './moviecard.css'
-function MovieCard({image, title, rating}){
-  
+function MovieCard({movie,image, title, rating,handleClick, onClickSelectedCard}){
+    
     const imageUrl = `https://image.tmdb.org/t/p/w500${image}`
     return (
-      <div className='movie-card'>
+      <div className='movie-card' onClick={ () => (onClickSelectedCard(movie.id))}>
   
         <img src={imageUrl} alt="there is an image here" className='imageTag'/>
         <p>{title}</p>
