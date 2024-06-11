@@ -15,7 +15,7 @@ const App = () => {
 
   const fetchData = async () => {
     const apiKey = import.meta.env.VITE_API_KEY   
-    let tempUrl =  `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currPagenum}`
+    let tempUrl =  `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}`
 
 
     if (searchQuery != "") {
@@ -50,10 +50,9 @@ const App = () => {
   }
 
   const handleSubmit = (curr) =>{
+    setPage(1);
     setSearchQuery(curr);
   }
-
-  
 
   
   return(
@@ -64,10 +63,9 @@ const App = () => {
         <button onClick={handleNowPlaying}>Now Playing</button>
       
       </header>
-      <main>
-        <MovieList data = {currMovie}/>
-        <button onClick={loadClicked}>Load More</button>
-      </main>
+      <MovieList data = {currMovie}/>
+      <button onClick={loadClicked}>Load More</button>
+
    
     </div>
   )
