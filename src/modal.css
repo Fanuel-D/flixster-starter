@@ -1,12 +1,12 @@
 .modal {
     display: flex;
     width: 800px;
-    height: 600px;
+    height: 700px;
     background-color: grey;
     position: fixed; 
     z-index: 1; /* Sit on top */
-    left: 28%;
-    top: 15%;
+    left: 25%;
+    top: 10%;
 
     justify-content: center;
     flex-direction: column;
@@ -14,4 +14,11 @@
     border: none;
     border-radius: 10px;
     padding: 30px;
+}
+
+.modalImg {
+    width: 400px;
+    height: 500px;
+    border: none;
+    border-radius: 10px;
 }

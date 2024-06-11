@@ -17,6 +17,7 @@ function MovieList({data}){
       const detailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
       const detailsResponse = await fetch(detailsUrl)
       const details = await detailsResponse.json()
+      console.log(details)
       setModalOpen(true)
       setSelectedCard(details)
     }
@@ -32,7 +33,7 @@ function MovieList({data}){
         )
         }
       )}
-       <Modal isOpen = {isModalOpen} selectedCardData = {selectedCard} />
+       <Modal isOpen = {isModalOpen} selectedCardData = {selectedCard} selectData = {selectedCard} />
       </div>
     
     )

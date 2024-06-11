@@ -25,7 +25,7 @@ const App = () => {
 
     const response = await fetch(tempUrl);
     const data = await response.json();    
-    console.log(data)
+    // console.log(data)
 
     if (currPagenum > 1){
       setMovie( previous=> [
@@ -49,6 +49,7 @@ const App = () => {
   const handleNowPlaying = (e) => {
     e.stopPropagation()
     setSearchQuery("");
+    setPage(1);
   }
 
   const handleSubmit = (curr) =>{
