@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background-color: #242424;
 }
 
 button {
@@ -11,6 +11,7 @@ button {
   font-size: 16px;
   font-weight: bold;
   transition: background-color 0.3s ease;
+  margin: 20px;
 }
 
 button:hover {

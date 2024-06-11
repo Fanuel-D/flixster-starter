@@ -1,7 +1,9 @@
 .App {
   text-align: center;
 }
-
+p {
+  color: white;
+}
 .App-header {
   background-color: #282c34;
   display: flex;
@@ -15,6 +17,7 @@
 @media (max-width: 600px) {
   .movie-card {
     width: 100%;
+    background-color: #282c34;
   }
 
   .search-bar {
@@ -25,4 +28,32 @@
   .search-bar form {
     flex-direction: column;
   }
+}
+
+
+
+.imageTag {
+  width: 100%;
+  height: 80%;
+  border-radius: 10px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.movie-card {
+  width: 20rem;
+  height: 34rem;
+  border: none;
+  border-radius: 10px;
+
+  background-color: black
+  
+  
+}
+
+.movieList {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
