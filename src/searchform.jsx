@@ -1,26 +1,25 @@
 import { useEffect, useState } from 'react'
 
 function SearchForm({formUpdate}) {
-    const [searchQuery,setSearchQuery] = useState("")
+    const [search,searchQuery] = useState("")
 
 
     const handleSearchChange = (event) => {
-        setSearchQuery(event.target.value);
+        searchQuery(event.target.value);
     };
 
     const handleSubmit = (event)=> {
         event.preventDefault()
-        formUpdate(event.target.value)
+        formUpdate(search)
     }
 
     return (
         <div>
             <form action="" onSubmit={handleSubmit}>
-                <input type="text" placeholder='Type movie name' onChange={handleSearchChange} value = {searchQuery}/>
+                <input type="text" placeholder='Type movie name' onChange={handleSearchChange} value = {search}/>
                 <button type="submit">Search</button>
             </form>
         </div>
-   
     )
 }
 
