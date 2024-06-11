@@ -10,6 +10,7 @@ import SearchForm from "./searchform.jsx"
 const App = () => {
   const [currMovie, setMovie] = useState(null)
   const [currPagenum, setPage]  = useState("1") 
+  const [searchQuery,setSearchQuery] = useState("")
 
 
   const fetchData = async () => {
@@ -17,9 +18,9 @@ const App = () => {
     let tempUrl =  `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currPagenum}`
 
 
-    // if (searchQuery) {
-    //   tempUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(searchQuery)}`
-    // }
+    if (searchQuery) {
+      tempUrl = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(searchQuery)}`
+    }
     const response = await fetch(tempUrl);
     const data = await response.json();    
 
@@ -35,11 +36,15 @@ const App = () => {
 
   useEffect(()=>{
       fetchData()   
-  },[currPagenum])
+  },[currPagenum, searchQuery])
 
   function loadClicked(){
     let nextPage = currPagenum + 1
     setPage(nextPage)
+  }
+
+  const handleSubmit = (curr) =>{
+    setSearchQuery(curr);
   }
 
   
@@ -47,7 +52,7 @@ const App = () => {
     <div className="App">
       <header className='App-header'>
         <h1>Flixster</h1>
-        <SearchForm />
+        <SearchForm formUpdate = {handleSubmit}/>
       
       </header>
       <MovieList data = {currMovie}/>
