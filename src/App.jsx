@@ -27,7 +27,6 @@ const App = () => {
 
     const response = await fetch(tempUrl);
     const data = await response.json();    
-    // console.log(data)
 
     if (currPagenum > 1){
       setMovie( previous=> [
