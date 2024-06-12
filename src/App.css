@@ -31,6 +31,11 @@ main {
   }
 }
 
+.App-footer {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
 
 
 

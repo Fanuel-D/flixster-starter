@@ -71,10 +71,13 @@ const App = () => {
         <SearchForm formUpdate = {handleSubmit}/>
         <button onClick={handleNowPlaying}>Now Playing</button>
         <DropDown choose ={handleChoose} />
-      
       </header>
       <MovieList data = {currMovie}/>
       <button onClick={loadClicked}>Load More</button>
+
+      <footer className= 'App-footer'>
+        Designed by Fanuel Dana
+      </footer>
 
    
     </div>

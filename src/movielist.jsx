@@ -12,12 +12,13 @@ function MovieList({data}){
     const [selectedCard, setSelectedCard] = useState(null)
 
     
-    const handleSelectedCard = async (id) => {
+    const handleSelectedCard = async (id,event) => {
+      event.stopPropagation()
       const apiKey = import.meta.env.VITE_API_KEY
       const detailsUrl = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}`
       const detailsResponse = await fetch(detailsUrl)
       const details = await detailsResponse.json()
-      console.log(details)
+      // console.log(details)
       setModalOpen(true)
       setSelectedCard(details)
     }
