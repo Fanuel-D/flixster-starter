@@ -3,7 +3,7 @@ import './movielist.css'
 import { useEffect, useState } from 'react'
 
 import Modal from './modal.jsx'
-function MovieList({data}){
+function MovieList({data, liked}){
     if (!data){
       return null
     }
@@ -32,7 +32,7 @@ function MovieList({data}){
       {data.map((movie)=>{
         return (
           <div key = {movie.id}>
-            <MovieCard movie = {movie} image={movie.poster_path} title={movie.original_title} rating = {movie.vote_average} onClickSelectedCard = {handleSelectedCard}/>
+            <MovieCard likedMoviesHandler = {liked} movie = {movie} onClickSelectedCard = {handleSelectedCard}/>
            
           </div>
         )
@@ -44,4 +44,4 @@ function MovieList({data}){
     )
   }
 
-  export default MovieList
+export default MovieList

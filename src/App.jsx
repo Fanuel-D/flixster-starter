@@ -15,6 +15,7 @@ const App = () => {
   const [searchQuery,setSearchQuery] = useState("")
   const [filter, setFilter] = useState("popularity.desc")
 
+  const [likedMovies, setLikedMovies] = useState([])
 
 
   const fetchData = async () => {
@@ -63,6 +64,11 @@ const App = () => {
     setFilter(e.target.value)
   }
 
+  const handleLikedMovies = (newMovieName) => {
+    let newList = [...likedMovies,newMovieName]
+    setLikedMovies(newList)
+  }
+
   
   return(
     <div className="App">
@@ -77,14 +83,13 @@ const App = () => {
         
       </header>
       <div className='bodyPart'>
-        <SideBar />
-        <MovieList data = {currMovie}/>
+        <SideBar liked= {likedMovies} />
+        <MovieList data = {currMovie} liked= {handleLikedMovies}/>
        
       </div>
       <button className = "loadButton" onClick={loadClicked}>Load More</button>
      
       
-     
 
       <footer className= 'App-footer'>
         Designed by Fanuel Dana
@@ -97,4 +102,3 @@ const App = () => {
 }
 
 export default App
-// likedMovies = {liked} seenMovies = {seen}

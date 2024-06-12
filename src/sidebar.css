@@ -7,13 +7,19 @@
     top: 7.5rem;
     z-index: 10;
     border-radius: 15px;
+    overflow: auto;
+    color: white;
   
-   
 }
 
 .outer {
     width: 100rem;
     height: 100vh;
+    z-index: 10;
  
+}
+
+li {
+    margin-bottom: 10px;
 }
 
