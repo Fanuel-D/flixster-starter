@@ -5,14 +5,35 @@ main {
   width: 100%;
 }
 
+.bodyPart {
+  display: flex;
+  flex-direction: row;
+}
+
+.rightPart {
+  margin-right: 40px;
+}
+
+.nameOfSite {
+  margin-left: 150px;
+}
+
+.loadButton {
+  margin-left: 40rem;
+}
+
+
 .App-header {
   background-color: #282c34;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
   color: white;
   padding: 20px;
+  justify-content: space-between;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
 }
 
 @media (max-width: 600px) {

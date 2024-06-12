@@ -1,0 +1,19 @@
+.cool{
+    margin: 13px;
+    position: fixed;
+    width: 39.30rem;
+    height: 79vh;
+    background-color: #282c34;
+    top: 7.5rem;
+    z-index: 10;
+    border-radius: 15px;
+  
+   
+}
+
+.outer {
+    width: 100rem;
+    height: 100vh;
+ 
+}
+

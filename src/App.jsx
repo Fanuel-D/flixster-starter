@@ -5,6 +5,7 @@ import './movielist.css'
 import MovieList from './movielist'
 import SearchForm from "./searchform.jsx"
 import DropDown from './DropDown.jsx'
+import SideBar from './sidebar.jsx'
 
 
 
@@ -66,13 +67,24 @@ const App = () => {
   return(
     <div className="App">
       <header className='App-header'>
-        <h1>Flixster</h1>
+        <h1 className='nameOfSite'>Flixster</h1>
+
         <SearchForm formUpdate = {handleSubmit}/>
-        <button onClick={handleNowPlaying}>Now Playing</button>
-        <DropDown choose ={handleChoose} />
+        <div className='rightPart'>
+          <button onClick={handleNowPlaying}>Now Playing</button>
+          <DropDown choose ={handleChoose} />
+        </div>
+        
       </header>
-      <MovieList data = {currMovie}/>
-      <button onClick={loadClicked}>Load More</button>
+      <div className='bodyPart'>
+        <SideBar />
+        <MovieList data = {currMovie}/>
+       
+      </div>
+      <button className = "loadButton" onClick={loadClicked}>Load More</button>
+     
+      
+     
 
       <footer className= 'App-footer'>
         Designed by Fanuel Dana
@@ -85,3 +97,4 @@ const App = () => {
 }
 
 export default App
+// likedMovies = {liked} seenMovies = {seen}
