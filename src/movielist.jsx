@@ -3,7 +3,7 @@ import './movielist.css'
 import { useEffect, useState } from 'react'
 
 import Modal from './modal.jsx'
-function MovieList({data, liked}){
+function MovieList({data, liked, watched}){
     if (!data){
       return null
     }
@@ -32,7 +32,7 @@ function MovieList({data, liked}){
       {data.map((movie)=>{
         return (
           <div key = {movie.id}>
-            <MovieCard likedMoviesHandler = {liked} movie = {movie} onClickSelectedCard = {handleSelectedCard}/>
+            <MovieCard watchedMoviesHandler = {watched} likedMoviesHandler = {liked} movie = {movie} onClickSelectedCard = {handleSelectedCard}/>
            
           </div>
         )

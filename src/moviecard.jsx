@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './moviecard.css'
-function MovieCard({movie,likedMoviesHandler , onClickSelectedCard}){
+function MovieCard({movie,likedMoviesHandler, watchedMoviesHandler, onClickSelectedCard}){
   const [like,setLiked] = useState(false)  
   const image = movie.poster_path
   const title = movie.original_title
@@ -14,6 +14,7 @@ function MovieCard({movie,likedMoviesHandler , onClickSelectedCard}){
   }
 
   const handleInputClicked = (e) => {
+    watchedMoviesHandler(title)
     e.stopPropagation()
   }
 

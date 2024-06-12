@@ -16,6 +16,8 @@ const App = () => {
   const [filter, setFilter] = useState("popularity.desc")
 
   const [likedMovies, setLikedMovies] = useState([])
+  const [watchedMovies, setWatchedMovies] = useState([])
+
 
 
   const fetchData = async () => {
@@ -65,8 +67,13 @@ const App = () => {
   }
 
   const handleLikedMovies = (newMovieName) => {
-    let newList = [...likedMovies,newMovieName]
-    setLikedMovies(newList)
+    let newLikeList = [...likedMovies,newMovieName]
+    setLikedMovies(newLikeList)
+  }
+
+  const handleWatchedMovies = (newWatchedMovie) => {
+    let newWatchedList = [...watchedMovies, newWatchedMovie]
+    setWatchedMovies(newWatchedList)
   }
 
   
@@ -83,8 +90,8 @@ const App = () => {
         
       </header>
       <div className='bodyPart'>
-        <SideBar liked= {likedMovies} />
-        <MovieList data = {currMovie} liked= {handleLikedMovies}/>
+        <SideBar liked= {likedMovies} watched = {watchedMovies}/>
+        <MovieList data = {currMovie} liked= {handleLikedMovies} watched = {handleWatchedMovies}/>
        
       </div>
       <button className = "loadButton" onClick={loadClicked}>Load More</button>

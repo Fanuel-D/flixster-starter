@@ -16,10 +16,13 @@
     width: 100rem;
     height: 100vh;
     z-index: 10;
- 
 }
 
 li {
     margin-bottom: 10px;
+}
+
+.watchedMovies {
+    margin-top: 150px;
 }
 
