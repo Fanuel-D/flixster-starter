@@ -4,6 +4,7 @@ import './moviecard.css'
 import './movielist.css'
 import MovieList from './movielist'
 import SearchForm from "./searchform.jsx"
+import DropDown from './DropDown.jsx'
 
 
 
@@ -11,16 +12,17 @@ const App = () => {
   const [currMovie, setMovie] = useState(null)
   const [currPagenum, setPage]  = useState(1) 
   const [searchQuery,setSearchQuery] = useState("")
+  const [filter, setFilter] = useState("popularity.desc")
 
 
 
   const fetchData = async () => {
     const apiKey = import.meta.env.VITE_API_KEY   
-    let tempUrl =  `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}`
+    let tempUrl =  `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}&sort_by=${filter}`
 
 
     if (searchQuery != "") {
-      tempUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(searchQuery)}`
+      tempUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(searchQuery)}&sort_by=${filter}`
     }
 
     const response = await fetch(tempUrl);
@@ -39,7 +41,7 @@ const App = () => {
 
   useEffect(()=>{
       fetchData()   
-  },[currPagenum, searchQuery])
+  },[currPagenum, searchQuery,filter])
 
   function loadClicked(){
     let nextPage = currPagenum + 1
@@ -57,6 +59,10 @@ const App = () => {
     setSearchQuery(curr);
   }
 
+  const handleChoose = (e) => {
+    setFilter(e.target.value)
+  }
+
   
   return(
     <div className="App">
@@ -64,6 +70,7 @@ const App = () => {
         <h1>Flixster</h1>
         <SearchForm formUpdate = {handleSubmit}/>
         <button onClick={handleNowPlaying}>Now Playing</button>
+        <DropDown choose ={handleChoose} />
       
       </header>
       <MovieList data = {currMovie}/>

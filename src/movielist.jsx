@@ -21,6 +21,11 @@ function MovieList({data}){
       setModalOpen(true)
       setSelectedCard(details)
     }
+
+    const handleClosed = (event) =>{
+      event.stopPropagation()
+      setModalOpen(false)
+    }
   
     return(
       <div className='movieList'>
@@ -33,7 +38,7 @@ function MovieList({data}){
         )
         }
       )}
-       <Modal isOpen = {isModalOpen} selectedCardData = {selectedCard} selectData = {selectedCard} />
+       <Modal isOpen = {isModalOpen} selectedCardData = {selectedCard} selectData = {selectedCard} isClosed={handleClosed} />
       </div>
     
     )
