@@ -9,11 +9,20 @@
   color: white;
   border-radius: 10px;
 }
-
+ol {
+  margin-top: 80px;
+}
 li {
   margin-bottom: 10px;
+  width: 70%;
 }
 
 .watchedMovies {
   margin-top: 150px;
+}
+
+@media (max-width: 820px) {
+  .outer {
+    margin-top: 10.5rem;
+  }
 }

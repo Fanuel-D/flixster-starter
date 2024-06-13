@@ -4,16 +4,24 @@ function SideBar({ liked, watched }) {
     <div className="outer">
       <h1>Liked Movies</h1>
       <ol>
-        {liked.map((likeMovie) => {
-          return <li>{likeMovie}</li>;
-        })}
+        {liked.length > 0 ? (
+          liked.map((likeMovie) => {
+            return <li>{likeMovie}</li>;
+          })
+        ) : (
+          <h4>No liked Movies to display</h4>
+        )}
       </ol>
 
       <h1 className="watchedMovies">Watched Movies</h1>
       <ol>
-        {watched.map((watchMovie) => {
-          return <li>{watchMovie}</li>;
-        })}
+        {watched.length > 0 ? (
+          watched.map((watchMovie) => {
+            return <li>{watchMovie}</li>;
+          })
+        ) : (
+          <h4>No watched movies selected</h4>
+        )}
       </ol>
     </div>
   );

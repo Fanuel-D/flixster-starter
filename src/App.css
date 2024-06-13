@@ -50,6 +50,25 @@ main {
   .search-bar form {
     flex-direction: column;
   }
+  .nameOfSite {
+    margin-left: 100px;
+  }
+  .bodyPart {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
+}
+
+@media (max-width: 430px) {
+  .nameOfSite {
+    margin-left: 100px;
+  }
+  .bodyPart {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+  }
 }
 
 .App-footer {
