@@ -21,16 +21,19 @@ function Modal({ isOpen, isClosed, selectData }) {
             <p className="modalText">
               Genres: {selectData.genres.map((genre) => genre.name).join(", ")}
             </p>
-            {selectData.trailerUrl && (
-              <iframe
-                src={selectData.trailerUrl}
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Movie Trailer"
-                width="600"
-                height="400"
-              ></iframe>
-            )}
+            <div className="trailer">
+              {selectData.trailerUrl && (
+                <iframe
+                  src={selectData.trailerUrl}
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Movie Trailer"
+                  width="600"
+                  height="400"
+                ></iframe>
+              )}
+            </div>
+
             <button onClick={isClosed}> Close</button>
           </div>
         </div>

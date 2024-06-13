@@ -1,6 +1,5 @@
 import "./sidebar.css";
 function SideBar({ liked, watched }) {
-  console.log(liked);
   return (
     <div className="outer">
       <h1>Liked Movies</h1>
