@@ -1,15 +1,16 @@
 .movieList {
-    width: 160rem;
-    margin: 10px;
-    margin-top: 120px;
-    margin-bottom: 0px;
+  width: 65%;
+  margin: 10px;
+  margin-top: 120px;
+  margin-bottom: 0px;
+  margin-left: 40rem;
+  margin-right: 10px;
 
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-    gap: 20px;
-  }
-
-
-
-  
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  padding-bottom: 2px;
+  gap: 20px;
+  overflow-y: auto;
+  background-color: #242424;
+}

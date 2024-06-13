@@ -1,27 +1,29 @@
-import { useEffect, useState } from 'react'
-import './searchForm.css'
+import { useEffect, useState } from "react";
+import "./searchForm.css";
 
-function SearchForm({formUpdate}) {
-    const [search,searchQuery] = useState("")
+function SearchForm({ formUpdate }) {
+  const [search, searchQuery] = useState("");
 
+  const handleSearchChange = (event) => {
+    searchQuery(event.target.value);
+  };
 
-    const handleSearchChange = (event) => {
-        searchQuery(event.target.value);
-    };
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    formUpdate(search);
+  };
 
-    const handleSubmit = (event)=> {
-        event.preventDefault()
-        formUpdate(search)
-    }
-
-    return (
-        <div>
-            <form action="" onSubmit={handleSubmit}>
-                <input type="text" placeholder='Type movie name' onChange={handleSearchChange} value = {search}/>
-                <button type="submit">Search</button>
-            </form>
-        </div>
-    )
+  return (
+    <form className="searchForm" action="" onSubmit={handleSubmit}>
+      <input
+        type="text"
+        placeholder="Type movie name"
+        onChange={handleSearchChange}
+        value={search}
+      />
+      <button type="submit">Search</button>
+    </form>
+  );
 }
 
-export default SearchForm
+export default SearchForm;

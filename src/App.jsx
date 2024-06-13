@@ -75,7 +75,7 @@ const App = () => {
       <header className="App-header">
         <h1 className="nameOfSite">Flixster</h1>
 
-        <SearchForm formUpdate={handleSubmit} />
+        <SearchForm className="searchForm" formUpdate={handleSubmit} />
         <div className="rightPart">
           <button onClick={handleNowPlaying}>Now Playing</button>
           <DropDown choose={handleChoose} />

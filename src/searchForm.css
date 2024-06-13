@@ -1,9 +1,13 @@
-input{
-    width: 600px;
-    height: 30px;
-    border-radius: 10px;
-    border: none;
-    color: black;
-    padding: 10px;
-  
+.searchForm form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.searchForm input {
+  width: 15rem;
+  height: 30px;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
 }
