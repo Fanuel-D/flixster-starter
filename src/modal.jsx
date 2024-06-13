@@ -24,6 +24,7 @@ function Modal({ isOpen, isClosed, selectData }) {
             <div className="trailer">
               {selectData.trailerUrl && (
                 <iframe
+                  className="video"
                   src={selectData.trailerUrl}
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
@@ -32,9 +33,11 @@ function Modal({ isOpen, isClosed, selectData }) {
                   height="400"
                 ></iframe>
               )}
+              <button className="closeButton" onClick={isClosed}>
+                {" "}
+                Close
+              </button>
             </div>
-
-            <button onClick={isClosed}> Close</button>
           </div>
         </div>
       )}

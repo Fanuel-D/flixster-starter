@@ -14,7 +14,6 @@
 .modalContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   background-color: #242424;
   padding: 10px;
@@ -24,8 +23,16 @@
   overflow-y: auto;
 }
 
+.closeButton {
+  width: 40%;
+}
+
 .trailer {
-  height: 10%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .modalImg {
