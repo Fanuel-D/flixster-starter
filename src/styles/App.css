@@ -1,30 +1,10 @@
-.App {
-  text-align: center;
-}
-main {
-  width: 100%;
-}
-
 .bodyPart {
   display: flex;
   flex-direction: row;
   width: 100vw;
 }
 
-.rightPart {
-  margin-right: 40px;
-}
-
-.nameOfSite {
-  margin-left: 150px;
-}
-
-.loadButton {
-  margin-top: 0;
-  margin-left: 40rem;
-}
-
-.App-header {
+.appHeader {
   display: flex;
   justify-content: space-between;
   position: fixed;
@@ -36,43 +16,20 @@ main {
   z-index: 10;
 }
 
-@media (max-width: 600px) {
-  .movie-card {
-    width: 100%;
-    background-color: #282c34;
-  }
-
-  .search-bar {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search-bar form {
-    flex-direction: column;
-  }
-  .nameOfSite {
-    margin-left: 100px;
-  }
-  .bodyPart {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-  }
-}
-
-@media (max-width: 430px) {
-  .nameOfSite {
-    margin-left: 100px;
-  }
-  .bodyPart {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-  }
-}
-
-.App-footer {
+.appFooter {
   background-color: #282c34;
   padding: 20px;
   color: white;
+}
+
+@media screen and (max-width: 390px) {
+  .appHeader {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+  }
+  .nameOfSite {
+    margin-left: 30px;
+    margin-right: 20px;
+  }
 }

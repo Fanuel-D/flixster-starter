@@ -16,21 +16,27 @@ const App = () => {
 
   const fetchData = async () => {
     const apiKey = import.meta.env.VITE_API_KEY;
-    let tempUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}&sort_by=${filter}`;
+    let URL = `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${currPagenum}&sort_by=${filter}`;
 
     if (searchQuery != "") {
-      tempUrl = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(
+      URL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&page=${currPagenum}&query=${encodeURIComponent(
         searchQuery
       )}&sort_by=${filter}`;
     }
+    try {
+      const response = await fetch(URL);
+      if (!response.ok) {
+        throw new Error("Couldn't fetch from Movie from given URL");
+      }
+      const data = await response.json();
 
-    const response = await fetch(tempUrl);
-    const data = await response.json();
-
-    if (currPagenum > 1) {
-      setMovie((previous) => [...previous, ...data.results]);
-    } else {
-      setMovie(data.results);
+      if (currPagenum > 1) {
+        setMovie((previous) => [...previous, ...data.results]);
+      } else {
+        setMovie(data.results);
+      }
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -46,10 +52,11 @@ const App = () => {
   const handleNowPlaying = (e) => {
     e.stopPropagation();
     setSearchQuery("");
+    setFilter("");
     setPage(1);
   };
 
-  const handleSubmit = (curr) => {
+  const handleFormSubmit = (curr) => {
     setPage(1);
     setSearchQuery(curr);
   };
@@ -69,12 +76,13 @@ const App = () => {
   };
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="nameOfSite">Flixster</h1>
-
-        <SearchForm className="searchForm" formUpdate={handleSubmit} />
-        <div className="rightPart">
+    <div className="App" style={{ textAlign: "center" }}>
+      <header className="appHeader">
+        <h1 className="nameOfSite" style={{ marginLeft: "20px" }}>
+          Flixster
+        </h1>
+        <SearchForm className="searchForm" formUpdate={handleFormSubmit} />
+        <div className="headerRightPart" style={{ marginRight: 40 }}>
           <button onClick={handleNowPlaying}>Now Playing</button>
           <DropDown choose={handleChoose} />
         </div>
@@ -87,11 +95,14 @@ const App = () => {
           watched={handleWatchedMovies}
         />
       </div>
-      <button className="loadButton" onClick={loadClicked}>
+      <button
+        style={{ marginTop: 0, marginLeft: "40rem" }}
+        className="loadButton"
+        onClick={loadClicked}
+      >
         Load More
       </button>
-
-      <footer className="App-footer">Designed by Fanuel Dana</footer>
+      <footer className="appFooter">Designed by Fanuel Dana</footer>
     </div>
   );
 };
