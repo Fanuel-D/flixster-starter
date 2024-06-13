@@ -1,4 +1,4 @@
-import "./modal.css";
+import "../styles/modal.css";
 function Modal({ isOpen, isClosed, selectData }) {
   const handleModalClicked = (e) => {
     e.stopPropagation();

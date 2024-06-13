@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./searchForm.css";
+import "../styles/searchForm.css";
 
 function SearchForm({ formUpdate }) {
   const [search, searchQuery] = useState("");

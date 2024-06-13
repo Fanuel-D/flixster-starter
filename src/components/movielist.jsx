@@ -1,5 +1,5 @@
 import MovieCard from "./moviecard.jsx";
-import "./movielist.css";
+import "../styles/movielist.css";
 import { useEffect, useState } from "react";
 
 import Modal from "./modal.jsx";

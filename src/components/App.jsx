@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
-import "./App.css";
-import "./moviecard.css";
-import "./movielist.css";
-import MovieList from "./movielist";
+import "../styles/App.css";
+import MovieList from "./movielist.jsx";
 import SearchForm from "./searchform.jsx";
 import DropDown from "./DropDown.jsx";
 import SideBar from "./sidebar.jsx";

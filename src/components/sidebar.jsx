@@ -1,4 +1,4 @@
-import "./sidebar.css";
+import "../styles/sidebar.css";
 function SideBar({ liked, watched }) {
   return (
     <div className="outer">
