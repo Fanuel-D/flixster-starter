@@ -59,7 +59,7 @@ Add your response here
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Overall it went pretty well, I wanted to 
+Overall it went pretty well, I could have planned better to incorpporate responsiveness for smaller screens before adding sidebars and functionality. 
 
 ### Open-source libraries used
 
