@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "../styles/moviecard.css";
+import PropTypes from "prop-types";
+
 function MovieCard({
   movie,
   likedMoviesHandler,
@@ -18,8 +20,8 @@ function MovieCard({
   };
 
   const handleInputClicked = (e) => {
-    watchedMoviesHandler(title);
     e.stopPropagation();
+    watchedMoviesHandler(title);
   };
 
   const imageUrl = `https://image.tmdb.org/t/p/w500${image}`;
@@ -29,22 +31,37 @@ function MovieCard({
       onClick={(e) => onClickSelectedCard(movie.id, e)}
     >
       <img src={imageUrl} alt="there is an image here" className="imageTag" />
-      <div className="lowerMovieCardPart">
+      <div
+        className="lowerMovieCardPart"
+        style={{ display: "flex", flexDirection: "column" }}
+      >
         <p>{title}</p>
         <p>{rating}</p>
         <div className="spanLike">
-          <span className={like ? "red" : "white"} onClick={handleLikeClicked}>
+          <span
+            style={{ width: "20px", height: "20px", cursor: "pointer" }}
+            className={like ? "red" : "white"}
+            onClick={handleLikeClicked}
+          >
             &#10084;
           </span>
           <input
             className="checkBox"
             type="checkbox"
             onClick={handleInputClicked}
+            style={{ width: "15px", height: "15px" }}
           ></input>
         </div>
       </div>
     </div>
   );
 }
+
+MovieCard.propTypes = {
+  onClickSelectedCard: PropTypes.func,
+  watchedMoviesHandler: PropTypes.func,
+  likedMoviesHandler: PropTypes.func,
+  movie: PropTypes.object,
+};
 
 export default MovieCard;

@@ -1,6 +1,7 @@
-function DropDown({ choose }) {
+import PropTypes from "prop-types";
+function DropDown({ chooseFilter }) {
   return (
-    <select name="" id="" defaultValue="sort" onChange={choose}>
+    <select name="" id="" defaultValue="sort" onChange={chooseFilter}>
       <option value="sort" disabled>
         Sort by
       </option>
@@ -10,5 +11,9 @@ function DropDown({ choose }) {
     </select>
   );
 }
+
+DropDown.propTypes = {
+  chooseFilter: PropTypes.func,
+};
 
 export default DropDown;

@@ -1,4 +1,4 @@
-.outer {
+.sideBar {
   width: 35%;
   position: fixed;
   margin-top: 9rem;
@@ -8,17 +8,6 @@
   overflow-y: auto;
   color: white;
   border-radius: 10px;
-}
-ol {
-  margin-top: 80px;
-}
-li {
-  margin-bottom: 10px;
-  width: 70%;
-}
-
-.watchedMovies {
-  margin-top: 150px;
 }
 
 @media screen and (max-width: 390px) {

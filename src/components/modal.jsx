@@ -1,31 +1,33 @@
 import "../styles/modal.css";
-function Modal({ isOpen, isClosed, selectData }) {
+import PropTypes from "prop-types";
+function Modal({ isOpenBool, isClosedFunc, selectedMovieData }) {
   const handleModalClicked = (e) => {
     e.stopPropagation();
   };
   return (
     <div>
-      {isOpen && (
-        <div className="modalBackDrop" onClick={isClosed}>
+      {isOpenBool && (
+        <div className="modalBackDrop" onClick={isClosedFunc}>
           <div className="modalContent" onClick={handleModalClicked}>
-            <h1 className="modalText">{selectData.title}</h1>
+            <h1 className="modalText">{selectedMovieData.title}</h1>
             <img
               className="modalImg"
-              src={`https://image.tmdb.org/t/p/w500${selectData.backdrop_path}`}
+              src={`https://image.tmdb.org/t/p/w500${selectedMovieData.backdrop_path}`}
               alt="there is a pic"
             />
             <p className="modalText">
-              Release Date: {selectData.release_date}{" "}
+              Release Date: {selectedMovieData.release_date}{" "}
             </p>
-            <p className="modalText">Overview: {selectData.overview}</p>
+            <p className="modalText">Overview: {selectedMovieData.overview}</p>
             <p className="modalText">
-              Genres: {selectData.genres.map((genre) => genre.name).join(", ")}
+              Genres:{" "}
+              {selectedMovieData.genres.map((genre) => genre.name).join(", ")}
             </p>
             <div className="trailer">
-              {selectData.trailerUrl && (
+              {selectedMovieData.trailerUrl && (
                 <iframe
                   className="video"
-                  src={selectData.trailerUrl}
+                  src={selectedMovieData.trailerUrl}
                   allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   title="Movie Trailer"
@@ -33,7 +35,11 @@ function Modal({ isOpen, isClosed, selectData }) {
                   height="400"
                 ></iframe>
               )}
-              <button className="closeButton" onClick={isClosed}>
+              <button
+                className="closeButton"
+                style={{ width: "40%" }}
+                onClick={isClosedFunc}
+              >
                 {" "}
                 Close
               </button>
@@ -45,4 +51,9 @@ function Modal({ isOpen, isClosed, selectData }) {
   );
 }
 
+Modal.propTypes = {
+  isOpenBool: PropTypes.bool,
+  isClosedFunc: PropTypes.func,
+  selectedMovieData: PropTypes.object,
+};
 export default Modal;

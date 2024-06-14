@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 import "../styles/App.css";
 import MovieList from "./movielist.jsx";
 import SearchForm from "./searchform.jsx";
-import DropDown from "./DropDown.jsx";
+import DropDown from "./dropdown.jsx";
 import SideBar from "./sidebar.jsx";
 
 const App = () => {
-  const [currMovie, setMovie] = useState(null);
+  const [moviesData, setMovie] = useState(null);
   const [currPagenum, setPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState("");
   const [filter, setFilter] = useState("");
-
   const [likedMovies, setLikedMovies] = useState([]);
   const [watchedMovies, setWatchedMovies] = useState([]);
 
@@ -84,15 +83,15 @@ const App = () => {
         <SearchForm className="searchForm" formUpdate={handleFormSubmit} />
         <div className="headerRightPart" style={{ marginRight: 40 }}>
           <button onClick={handleNowPlaying}>Now Playing</button>
-          <DropDown choose={handleChoose} />
+          <DropDown chooseFilter={handleChoose} />
         </div>
       </header>
       <div className="bodyPart">
-        <SideBar liked={likedMovies} watched={watchedMovies} />
+        <SideBar likedList={likedMovies} watchedList={watchedMovies} />
         <MovieList
-          data={currMovie}
-          liked={handleLikedMovies}
-          watched={handleWatchedMovies}
+          data={moviesData}
+          likedListHandler={handleLikedMovies}
+          watchedListHandler={handleWatchedMovies}
         />
       </div>
       <button

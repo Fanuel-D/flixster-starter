@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/searchForm.css";
+import PropTypes from "prop-types";
 
 function SearchForm({ formUpdate }) {
   const [search, searchQuery] = useState("");
@@ -25,5 +26,9 @@ function SearchForm({ formUpdate }) {
     </form>
   );
 }
+
+SearchForm.propTypes = {
+  formUpdate: PropTypes.func,
+};
 
 export default SearchForm;
