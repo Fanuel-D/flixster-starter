@@ -14,18 +14,18 @@
   background-color: #242424;
 }
 
-@media (max-width: 390px) {
-  .movieList {
-    width: 100vw;
-    margin-top: 250px;
-    margin-left: 20rem;
-  }
-}
-
-@media (max-width: 820px) {
+@media screen and (max-width: 820px) {
   .movieList {
     width: 100vw;
     margin-top: 150px;
     margin-left: 25rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .movieList {
+    width: 100vh;
+    margin-top: 250px;
+    margin-left: 10rem;
   }
 }
