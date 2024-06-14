@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../styles/App.css";
 import MovieList from "./movielist.jsx";
 import SearchForm from "./searchform.jsx";
-import DropDown from "./dropdown.jsx";
+import DropDown from "./DropDown.jsx";
 import SideBar from "./sidebar.jsx";
 
 const App = () => {
