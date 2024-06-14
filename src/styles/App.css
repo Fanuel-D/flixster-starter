@@ -22,7 +22,7 @@
   color: white;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 600px) {
   .appHeader {
     width: 100vw;
     display: flex;
@@ -31,5 +31,8 @@
   .nameOfSite {
     margin-left: 30px;
     margin-right: 20px;
+  }
+  .loadButton {
+    margin-left: 0rem !important;
   }
 }
