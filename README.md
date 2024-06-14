@@ -36,9 +36,9 @@ Deployed Application (optional): [Flixster Deployed Site](https://flixster-start
 - [x] **Embedded Movie Trailers**
   - [x] Within the popup displaying a movie's details, users can play the movie trailer.
 - [x] **Watched Checkbox**
-  - [ ] For each movie displayed, users can mark the movie as watched.
+  - [x] For each movie displayed, users can mark the movie as watched.
 - [x] **Favorite Button**
-  - [ ] For each movie displayed, users can favorite the movie.
+  - [x] For each movie displayed, users can favorite the movie.
 - [x] **Sidebar**
   - [x] Users can open a sidebar
   - [x] The sidebar displays the user's favorited and watched movies
